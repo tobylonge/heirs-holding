@@ -2,11 +2,11 @@
 
 @font-face {
     font-family: 'CenturyGothic';
-    src: URL('/font/CenturyGothicRegular.ttf') format('truetype');
+    src: URL('./font/CenturyGothicRegular.ttf') format('truetype');
 }
 @font-face {
     font-family: "CenturyGothic";
-    src: url("/font/CenturyGothicBold.ttf");
+    src: url("./font/CenturyGothicBold.ttf");
     font-weight: bold;
 }
 
