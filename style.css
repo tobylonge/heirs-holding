@@ -44,6 +44,7 @@
 @media (max-width: 768px) {
   .main-background {
     padding: 15px;
+    background-position: center;
   }
 }
 
