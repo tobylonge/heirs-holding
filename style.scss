@@ -1,0 +1,264 @@
+
+
+@font-face {
+    font-family: 'CenturyGothic';
+    src: URL('/font/CenturyGothicRegular.ttf') format('truetype');
+}
+@font-face {
+    font-family: "CenturyGothic";
+    src: url("/font/CenturyGothicBold.ttf");
+    font-weight: bold;
+}
+
+$bg-color: #424242;
+$primary-color: #CE1516;
+$muted-color: #707070;
+$trans-time: 300ms;
+$width: 100%;
+
+
+*, body {
+    font-family: 'CenturyGothic', sans-serif;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .hiden-xs {
+        display: none !important;
+    }
+}
+
+.main-background {
+    background: url('img/banner.jpg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 45px;
+    &::before {
+        content: '';
+        position: absolute;
+        background: rgba(255, 255, 255, 0.9);
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    @media (max-width: 768px) {
+        padding: 15px;
+    }
+
+    .main-content {
+        position: relative;
+        z-index: 1;
+        header {
+            display: flex;
+            justify-content: space-between;
+
+            img {
+                height: 40px;
+                @media (max-width: 768px) {
+                    height: 30px;
+                }
+            }
+
+            .right-header {
+                display: flex;
+                align-items: center;
+                img {
+                    border-radius: 50%;
+                    border: 2px solid $muted-color;
+                    margin-right: 10px;
+                }
+                p {
+                    font-size: 13px;
+                    color: $muted-color;
+                    font-weight: 500;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                }
+                .avatar-badge {
+                    position: relative;
+                    .badge {
+                        background: $primary-color;
+                        text-align: center;
+                        height: 16px;
+                        width: 16px;
+                        font-size: 12px;
+                        position: absolute;
+                        top: 0;
+                        right: 5px;
+                        border-radius: 50%;
+                        color: #fff;
+                        justify-content: center;
+                        display: flex;
+                        align-items: center;
+                        top: -5px;
+                        right: 10px;
+                    }
+                }
+            }
+        }
+
+        .content {
+            width: 30%;
+            /* margin: 45px auto; */
+            display: flex;
+            flex-direction: column;
+            height: calc(100vh - 90px);
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+            @media (max-width: 768px) {
+                width: 100%;
+                margin: 15px auto;
+                // height: calc(100vh - 60px);
+            }
+
+            p {
+                font-size: 20px;
+                color: $muted-color;
+                font-weight: bold;
+                &.small {
+                    font-size: 14px;
+                    color: $primary-color;
+                    font-weight: normal;
+                    margin: 15px 0;
+                }
+                @media (max-width: 768px) {
+                    font-size: 16px;
+                }
+            }
+            .top-content {
+                margin-bottom: 45px;
+                @media (max-width: 768px) {
+                    margin-bottom: 30px;
+                    margin-top: 30px;
+                }
+                h1 {
+                    font-size: 5em;
+                    font-weight: bold;
+                    color: $primary-color;
+                    @media (max-width: 768px) {
+                        font-size: 3.5em;
+                    }
+                }
+            }
+        }
+
+        .group {
+            position: relative;
+            margin: 45px 0;
+          }
+          
+          // INPUTS // ============================== //
+          textarea {
+            resize: none;
+          }
+          
+          input,
+          textarea {
+            background: none;
+            color: $muted-color;
+            font-size: 18px;
+            padding: 10px 0;
+            display: block;
+            width: $width;
+            border: none;
+            border-radius: 0;
+            border-bottom: 1px solid #D9D4D4;
+            &:focus {
+              outline: none;
+            }
+            &:focus ~ label,
+            &:valid ~ label {
+              top: -14px;
+              font-size: 12px;
+              color: $primary-color;
+            }
+            &:focus ~ .bar:before {
+              width: $width;
+            }
+          }
+          input[type="password"] {
+            letter-spacing: 0.3em;
+          }
+          
+          label {
+            color: $muted-color;
+            font-size: 14px;
+            font-weight: normal;
+            position: absolute;
+            pointer-events: none;
+            left: 5px;
+            top: 10px;
+            transition: $trans-time ease all;
+            font-weight: bold;
+          }
+
+          .btn-box {
+              margin: 45px 0;
+              display: flex;
+              justify-content: flex-end;
+              font-weight: bold;
+              align-items: center;
+              color: $muted-color;
+
+              a {
+                  display: flex;
+                  text-decoration: none;
+                  justify-content: center;
+                  align-items: center;
+                  color: $muted-color;
+              }
+
+              .btn {
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                margin-right: 7px;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                background: $primary-color;
+                box-shadow: 0 3px 5px -1px rgba(0,0,0,0.2), 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12);
+                border: none;
+
+                img {
+                    height: 16px;
+                    transform: rotate(180deg);
+                }
+              }
+          }
+          
+    }
+
+    .social-icons {
+        display: flex;
+        position: absolute;
+        left: 45px;
+        flex-direction: column;
+        bottom: 30px;
+        z-index: 2;
+
+        @media (max-width: 768px) {
+            flex-direction: row;
+            bottom: 30px;
+        }
+        img {
+            height: 25px;
+            margin-bottom: 15px;
+            cursor: pointer;
+
+            @media (max-width: 768px) {
+                margin-bottom: 0;
+                margin-right: 15px;
+            }
+        }
+    }
+
+    
+}
